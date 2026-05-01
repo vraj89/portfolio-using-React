@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
   return (
     <div
@@ -15,42 +17,42 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
         &times;
       </button>
 
-      <a
-        href="#home"
+      <Link
+        to="/"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl mb-6 text-gray-300 hover:text-white transition-colors transform transition-transform duration-300 ${
           menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}
       >
         Home
-      </a>
-      <a
-        href="#about"
+      </Link>
+      <Link
+        to="/about"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl mb-6 text-gray-300 hover:text-white transition-colors transform transition-transform duration-300 ${
           menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}
       >
         About
-      </a>
-      <a
-        href="#projects"
+      </Link>
+      <Link
+        to="/projects"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl mb-6 text-gray-300 hover:text-white transition-colors transform transition-transform duration-300 ${
           menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}
       >
         Projects
-      </a>
-      <a
-        href="#contact"
+      </Link>
+      <Link
+        to="/contact"
         onClick={() => setMenuOpen(false)}
         className={`text-2xl mb-6 text-gray-300 hover:text-white transition-colors transform transition-transform duration-300 ${
           menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
         }`}
       >
         Contact
-      </a>
+      </Link>
     </div>
   )
 }
