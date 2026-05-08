@@ -1,38 +1,35 @@
-# 🚀 Portfolio using React
+# 🚀 Professional React Portfolio
 
-A modern, responsive personal portfolio website built with **React**, **Vite**, and **Tailwind CSS**. Showcasing projects, skills, and experience with a sleek, professional design.
+A modern, responsive personal portfolio website built with **React**, **Vite**, and **Tailwind CSS**. Showcasing projects, skills, and experience with a sleek, professional design optimized for recruiters.
 
 ![React](https://img.shields.io/badge/React-19.2.4-blue?style=flat-square&logo=react)
 ![Vite](https://img.shields.io/badge/Vite-8.0.4-purple?style=flat-square&logo=vite)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.2.2-teal?style=flat-square&logo=tailwindcss)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/vraj89/portfolio-using-React?style=flat-square)
-![GitHub issues](https://img.shields.io/github/issues/vraj89/portfolio-using-React?style=flat-square)
-![GitHub stars](https://img.shields.io/github/stars/vraj89/portfolio-using-React?style=flat-square)
 
 ## ✨ Features
 
-- **Responsive Design** - Works seamlessly on desktop, tablet, and mobile devices
-- **Modern UI** - Built with Tailwind CSS for a clean, professional appearance
-- **Fast Performance** - Optimized with Vite for lightning-fast load times
-- **Smooth Navigation** - React Router for seamless page transitions
-- **Contact Form** - Integrated EmailJS for direct contact functionality
-- **Loading Screen** - Professional loading animation for better UX
-- **Mobile Menu** - Responsive navigation drawer for mobile users
-- **Projects Showcase** - Display your best work with detailed project information
-- **SEO Friendly** - Proper meta tags and structure for search engines
-- **Accessible** - Follows accessibility best practices (WCAG)
+- **Professional Design** - Clean, modern interface optimized for recruiters
+- **Responsive Layout** - Perfect viewing experience on all devices
+- **Functional Contact Form** - Direct email integration with EmailJS
+- **One-Page Navigation** - Smooth scrolling through all sections
+- **Project Showcase** - Detailed project cards with features and technologies
+- **Skills Display** - Organized skill categories with proficiency levels
+- **Education Timeline** - Academic background and certifications
+- **Performance Optimized** - Fast load times with Vite
+- **Mobile Friendly** - Responsive hamburger menu for mobile devices
+- **Loading Animation** - Professional loading screen
+- **SEO Optimized** - Proper meta tags and structure
+- **Accessible** - WCAG accessibility standards
 
-## 📋 Pages & Components
+## 📋 Sections
 
-- **Home** - Landing page with introduction and call-to-action
-- **About** - Personal information and background
-- **Projects** - Portfolio of completed projects
-- **Contact** - Contact form for inquiries
-- **Navigation** - Responsive navbar with mobile menu support
-- **Loading Screen** - Professional loading animation
-- **Footer** - Copyright and social links
-- **UI Components** - Reusable components (buttons, cards, modals)
+- **Home** - Professional introduction with call-to-action buttons
+- **About** - Background, expertise areas, and technical skills
+- **Education** - Academic qualifications and learning highlights
+- **Skills** - Organized technical skills with proficiency levels
+- **Projects** - Featured projects with key features and technologies
+- **Contact** - Direct email form and social media links
 
 ## 🛠️ Tech Stack
 
@@ -40,10 +37,7 @@ A modern, responsive personal portfolio website built with **React**, **Vite**, 
 - **Build Tool**: Vite 8.0.4
 - **Styling**: Tailwind CSS 4.2.2
 - **Routing**: React Router DOM 7.14.0
-- **State Management**: React Context API (for theme and modal states)
-- **Email Service**: EmailJS 3.2.0
-- **Icons**: Heroicons & React Icons
-- **Linting**: ESLint 9.39.4
+- **Email Service**: EmailJS 4.3.1 (for contact form)
 - **Deployment**: Vercel
 
 ## 🚀 Getting Started
@@ -59,7 +53,7 @@ A modern, responsive personal portfolio website built with **React**, **Vite**, 
 1. Clone the repository:
 ```bash
 git clone https://github.com/vraj89/portfolio-using-React.git
-cd portfolio
+cd portfolio-using-React
 ```
 
 2. Install dependencies:
@@ -67,21 +61,37 @@ cd portfolio
 npm install
 ```
 
-3. Configure environment variables:
+3. **Configure EmailJS (for contact form)**:
    - Create a `.env.local` file in the root directory
-   - Add your EmailJS credentials:
+   - Copy the template from `.env.example`
+   - Add your EmailJS credentials (see [EMAIL_SETUP.md](./EMAIL_SETUP.md) for detailed instructions):
      ```
+     VITE_EMAILJS_PUBLIC_KEY=your_public_key
      VITE_EMAILJS_SERVICE_ID=your_service_id
      VITE_EMAILJS_TEMPLATE_ID=your_template_id
-     VITE_EMAILJS_PUBLIC_KEY=your_public_key
      ```
 
-4. Start the development server:
+4. Update your contact information:
+   - Open `src/Contact.jsx`
+   - Replace `vrajvaghela89@gmail.com` with your email address
+   - Update LinkedIn and GitHub URLs in the Contact component
+
+5. Start the development server:
 ```bash
 npm run dev
 ```
 
 The application will run at `http://localhost:5173`
+
+### Email Setup (EmailJS)
+
+For detailed instructions on setting up the contact form with EmailJS, see [EMAIL_SETUP.md](./EMAIL_SETUP.md)
+
+Quick start:
+1. Sign up at [emailjs.com](https://www.emailjs.com/)
+2. Create an email service and template
+3. Add your credentials to `.env.local`
+4. Done! Your contact form will work immediately
 
 ## 📦 Available Scripts
 
@@ -93,67 +103,68 @@ npm run dev
 npm run build
 
 # Preview production build
-npm preview
+npm run preview
 
 # Run ESLint
 npm lint
-
-# Format code with Prettier
-npm run format
 ```
 
 ## 🌐 Deployment
 
 This project is optimized for deployment on **Vercel**.
 
-### Deploy to Vercel (Automatic)
+### Quick Deploy to Vercel
 
 1. Push your code to GitHub
 2. Go to [vercel.com](https://vercel.com)
 3. Click "New Project" and import your repository
-4. Vercel will automatically detect Vite configuration
+4. Add environment variables in Vercel dashboard:
+   - `VITE_EMAILJS_PUBLIC_KEY`
+   - `VITE_EMAILJS_SERVICE_ID`
+   - `VITE_EMAILJS_TEMPLATE_ID`
 5. Click "Deploy"
-
-### Deploy to Vercel (CLI)
-
-```bash
-# Install Vercel CLI (if not already installed)
-npm i -g vercel
-
-# Deploy
-vercel
-```
 
 Your portfolio will be live! 🎉
 
-**Live Demo**: https://portfolio-vraj89.vercel.app
+### Vercel CLI Deployment
+
+```bash
+npm i -g vercel
+vercel
+```
+
+**Note**: Make sure to add environment variables in Vercel dashboard after deployment.
 
 ## 📂 Project Structure
 
 ```
-portfolio/
+portfolio-using-React/
 ├── public/
-│   ├── vite.svg              # Vite logo
-│   └── robots.txt            # SEO configuration
+│   └── vite.svg
 ├── src/
-│   ├── assets/               # Static assets (images, icons)
-│   │   ├── logo.png
-│   │   └── ...
-│   ├── components/           # Reusable UI components
-│   │   ├── Navbar.jsx
-│   │   ├── MobileMenu.jsx
-│   │   ├── LoadingScreen.jsx
-│   │   ├── Footer.jsx
-│   │   └── UI/
-│   │       ├── Button.jsx
-│   │       ├── Card.jsx
-│   │       └── Modal.jsx
-│   ├── pages/                # Page components
-│   │   ├── Home.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   └── Contact.jsx
-│   ├── App.jsx               # Main application component
+│   ├── services/
+│   │   └── email.js          # EmailJS integration
+│   ├── Home.jsx              # Landing page
+│   ├── About.jsx             # About section
+│   ├── Education.jsx         # Education section
+│   ├── Skills.jsx            # Skills section
+│   ├── project.jsx           # Projects showcase
+│   ├── Contact.jsx           # Contact form
+│   ├── Navbar.jsx            # Navigation bar
+│   ├── MobileMenu.jsx        # Mobile navigation
+│   ├── LoadingScreen.jsx     # Loading animation
+│   ├── App.jsx               # Main app component
+│   ├── App.css               # Main styles
+│   ├── index.css             # Global styles
+│   ├── projectsData.js       # Projects data
+│   └── main.jsx              # React entry point
+├── .env.example              # Environment variables template
+├── EMAIL_SETUP.md            # Email configuration guide
+├── package.json              # Dependencies
+├── vite.config.js            # Vite configuration
+├── index.html                # HTML entry point
+├── eslint.config.js          # ESLint rules
+└── README.md                 # This file
 │   ├── main.jsx              # Entry point
 │   ├── index.css             # Global styles
 │   ├── projectsData.js       # Project data (imported from external file)

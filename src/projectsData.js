@@ -1,14 +1,38 @@
 export const projects = [
   {
     title: "Currency Converter",
-    description: "A web application that allows users to convert between different currencies using real-time exchange rates. Features include selecting currencies, entering amounts, and displaying converted values.",
-    technologies: ["React", "JavaScript", "HTML", "CSS", "Vercel"],
-    link: "https://currencyconverter-two-ashen.vercel.app/"
+    description: "A real-time currency conversion application that fetches live exchange rates. Users can select source and target currencies, enter amounts, and get instant conversions with a clean, intuitive interface.",
+    technologies: ["React", "JavaScript", "REST API", "Tailwind CSS", "Vercel"],
+    link: "https://currencyconverter-two-ashen.vercel.app/",
+    features: [
+      "Real-time exchange rate updates",
+      "Multiple currency support",
+      "Responsive mobile design",
+      "Fast and reliable API integration"
+    ]
   },
   {
     title: "Random Password Generator",
-    description: "A secure password generation tool that creates strong, random passwords. Users can customize password length and include/exclude uppercase letters, lowercase letters, numbers, and special characters.",
-    technologies: ["React", "JavaScript", "HTML", "CSS", "Vercel"],
-    link: "https://random-password-generator-murex-eight.vercel.app/"
+    description: "A secure password generation tool with customizable options. Users can control password length, character types (uppercase, lowercase, numbers, symbols), and easily copy generated passwords.",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "Vercel"],
+    link: "https://random-password-generator-murex-eight.vercel.app/",
+    features: [
+      "Customizable password length",
+      "Include/exclude character types",
+      "One-click copy functionality",
+      "Password strength indicator"
+    ]
+  },
+  {
+    title: "Counter Application",
+    description: "A simple yet elegant counter app demonstrating React state management and hooks. Features increment, decrement, and reset functionality with a modern UI design.",
+    technologies: ["React", "JavaScript", "Tailwind CSS", "React Hooks"],
+    link: "https://example.com",
+    features: [
+      "State management with hooks",
+      "Smooth animations",
+      "Responsive design",
+      "Clean code architecture"
+    ]
   }
 ];

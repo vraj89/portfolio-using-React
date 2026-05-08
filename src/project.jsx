@@ -11,7 +11,7 @@ export const Project = () => {
                         Featured Projects
                     </h2>
                     <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                        Explore my latest projects and see what I've been working on
+                        Explore my latest projects showcasing my skills in React development and web design
                     </p>
                 </div>
 
@@ -20,7 +20,7 @@ export const Project = () => {
                     {projects.map((project, index) => (
                         <div
                             key={index}
-                            className="group rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300"
+                            className="group rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col"
                         >
                             {/* Project Title */}
                             <h3 className="text-2xl font-bold mb-3 text-blue-400 group-hover:text-cyan-400 transition-colors">
@@ -28,9 +28,26 @@ export const Project = () => {
                             </h3>
 
                             {/* Project Description */}
-                            <p className="text-gray-300 mb-6 leading-relaxed">
+                            <p className="text-gray-300 mb-6 leading-relaxed flex-grow">
                                 {project.description}
                             </p>
+
+                            {/* Features Section */}
+                            {project.features && (
+                                <div className="mb-6">
+                                    <h4 className="text-sm font-semibold text-gray-400 mb-3 uppercase tracking-wider">
+                                        Key Features
+                                    </h4>
+                                    <ul className="space-y-1.5">
+                                        {project.features.map((feature, i) => (
+                                            <li key={i} className="text-gray-400 text-sm flex items-start gap-2">
+                                                <span className="text-blue-400 mt-0.5">✓</span>
+                                                <span>{feature}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
 
                             {/* Technologies Section */}
                             <div className="mb-6">
@@ -54,7 +71,7 @@ export const Project = () => {
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 px-4 py-2.5 rounded-lg border border-blue-500/30 font-medium transition-all hover:bg-blue-500/20 hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                                className="inline-flex items-center gap-2 bg-blue-500/10 text-blue-400 px-4 py-2.5 rounded-lg border border-blue-500/30 font-medium transition-all hover:bg-blue-500/20 hover:border-blue-500/50 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] w-fit"
                             >
                                 View Project
                                 <span className="text-lg">→</span>
