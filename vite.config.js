@@ -16,9 +16,14 @@ export default defineConfig({
     // Chunk splitting for better caching
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-        },
+        // Replace object form with function
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-dom')) return 'react-vendor';
+            if (id.includes('react-router-dom')) return 'react-router';
+            return 'vendor';
+          }
+        }
       },
     },
     // Optimize chunk size reporting
