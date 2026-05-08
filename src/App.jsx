@@ -8,6 +8,8 @@ import { MobileMenu } from "./MobileMenu"
 import { Project } from "./project"
 import './index.css'
 import Contact from "./Contact"
+import Education from "./Education"
+import Skills from "./Skills"
 
 function App() {
   const [isLoaded, setisLoaded] = useState(false);
@@ -21,6 +23,8 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/education" element={<Education />} />
+          <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Project />} />
           <Route path="/contact" element={<Contact />} />

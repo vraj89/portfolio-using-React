@@ -10,7 +10,7 @@ export const About = () => {
             About Me
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Learn more about my skills, education, and experience
+            Learn more about my skills and experience
           </p>
         </div>
 
@@ -23,39 +23,18 @@ export const About = () => {
           </p>
         </div>
 
-        {/* Skills and Education Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Frontend Skills */}
-          <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-6 text-blue-400">Frontend</h3>
-            <div className="flex flex-wrap gap-3">
-              {frontendSkills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="bg-blue-500/10 text-blue-300 py-2 px-4 rounded-full text-sm font-medium border border-blue-500/20 hover:bg-blue-500/20 hover:border-blue-500/40 transition-all cursor-pointer"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Education */}
-          <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-6 text-blue-400">Education</h3>
-            <div className="space-y-4">
-              <div className="bg-white/5 p-4 rounded-lg border border-white/5 hover:border-blue-500/20 transition-all">
-                <p className="text-gray-100 font-semibold mb-2">
-                  B.Tech in Information Technology
-                </p>
-                <p className="text-gray-400 text-sm">
-                  MBIT New V.V. Nagar Anand
-                </p>
-                <p className="text-gray-500 text-sm mt-1">
-                  Duration: 2023 - 2027
-                </p>
-              </div>
-            </div>
+        {/* Skills */}
+        <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300 mb-12">
+          <h3 className="text-2xl font-bold mb-6 text-blue-400">Frontend Skills</h3>
+          <div className="flex flex-wrap gap-3">
+            {frontendSkills.map((skill, index) => (
+              <span
+                key={index}
+                className="bg-blue-500/10 text-blue-300 py-2 px-4 rounded-full text-sm font-medium border border-blue-500/20 hover:bg-blue-500/20 hover:border-blue-500/40 transition-all cursor-pointer"
+              >
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
 
