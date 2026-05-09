@@ -51,10 +51,10 @@ function Contact() {
   };
 
   return (
-    <section className="min-h-screen flex flex-col items-center justify-center py-20 px-4">
+    <section id="contact" className="min-h-screen flex flex-col items-center justify-center py-20 px-4 scroll-smooth">
       <div className="max-w-4xl mx-auto w-full">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fadeIn">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             Let's Connect
           </h2>
@@ -65,8 +65,8 @@ function Contact() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Form */}
-          <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-            <h3 className="text-2xl font-bold mb-6 text-blue-400">Send me a Message</h3>
+          <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300 animate-slideIn group hover:-translate-y-1">
+            <h3 className="text-2xl font-bold mb-6 text-blue-400 group-hover:text-cyan-400 transition-colors">Send me a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Name Input */}
@@ -165,8 +165,8 @@ function Contact() {
           {/* Contact Info Card */}
           <div className="space-y-6">
             {/* Direct Email Card */}
-            <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-blue-400">Direct Contact</h3>
+            <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300 animate-slideInRight group hover:-translate-y-1">
+              <h3 className="text-2xl font-bold mb-6 text-blue-400 group-hover:text-cyan-400 transition-colors">Direct Contact</h3>
               
               <div className="space-y-4">
                 <div>
@@ -191,8 +191,8 @@ function Contact() {
             </div>
 
             {/* Social Links Card */}
-            <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-6 text-blue-400">Social Links</h3>
+            <div className="rounded-xl p-8 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300 animate-slideInRight group hover:-translate-y-1" style={{ transitionDelay: "100ms" }}>
+              <h3 className="text-2xl font-bold mb-6 text-blue-400 group-hover:text-cyan-400 transition-colors">Social Links</h3>
               
               <div className="space-y-3">
                 <a
