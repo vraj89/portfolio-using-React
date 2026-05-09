@@ -1,22 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { Intro } from "./Intro";
 import { Education } from "./Education";
-import { Experience } from "./Experience";
 import { InteractiveSkills } from "./InteractiveSkills";
 import InteractiveProjects from "./InteractiveProjects";
 import Contact from "./Contact";
 
 export const PortfolioPage = () => {
   const [selectedSkills, setSelectedSkills] = useState([]);
-  const [filteredProjectCount, setFilteredProjectCount] = useState(6);
-  const [filteredExperienceCount, setFilteredExperienceCount] = useState(3);
   const [activeSection, setActiveSection] = useState("intro");
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  // Update filtered counts
-  useEffect(() => {
+  const filteredProjectCount = useMemo(() => {
     if (selectedSkills.length === 0) {
-      setFilteredProjectCount(6);
-      setFilteredExperienceCount(3);
+      return 6;
     } else {
       // Count projects matching selected skills
       const projects = [
@@ -32,20 +28,7 @@ export const PortfolioPage = () => {
         p.technologies.some(tech => selectedSkills.includes(tech))
       ).length;
 
-      setFilteredProjectCount(projectCount);
-
-      // Count experiences matching selected skills
-      const experiences = [
-        { skills: ["React.js", "JavaScript", "Tailwind CSS", "REST API", "Git/GitHub"] },
-        { skills: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX Principles"] },
-        { skills: ["React.js", "JavaScript (ES6+)", "Context API", "Testing", "Bootstrap"] }
-      ];
-
-      const experienceCount = experiences.filter(e =>
-        e.skills.some(skill => selectedSkills.includes(skill))
-      ).length;
-
-      setFilteredExperienceCount(experienceCount);
+      return projectCount;
     }
   }, [selectedSkills]);
 
@@ -60,7 +43,7 @@ export const PortfolioPage = () => {
   // Track active section
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['intro', 'education', 'experience', 'skills', 'projects', 'contact'];
+      const sections = ['intro', 'education', 'skills', 'projects', 'contact'];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -88,11 +71,19 @@ export const PortfolioPage = () => {
             VV
           </div>
 
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white text-2xl focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? '✕' : '☰'}
+          </button>
+
           <div className="hidden md:flex items-center gap-8">
             {[
               { id: 'intro', label: 'Home' },
               { id: 'education', label: 'Education' },
-              { id: 'experience', label: 'Experience' },
               { id: 'skills', label: 'Skills' },
               { id: 'projects', label: 'Projects' },
               { id: 'contact', label: 'Contact' }
@@ -121,6 +112,49 @@ export const PortfolioPage = () => {
         </div>
       </nav>
 
+      {/* Mobile Menu Overlay */}
+      {menuOpen && (
+        <div className="fixed top-0 left-0 w-full h-screen bg-black/95 backdrop-blur-md z-50 flex flex-col items-center justify-center md:hidden">
+          <button
+            onClick={() => setMenuOpen(false)}
+            className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
+
+          <div className="flex flex-col gap-8 text-center">
+            {[
+              { id: 'intro', label: 'Home' },
+              { id: 'education', label: 'Education' },
+              { id: 'skills', label: 'Skills' },
+              { id: 'projects', label: 'Projects' },
+              { id: 'contact', label: 'Contact' }
+            ].map(({ id, label }, index) => (
+              <button
+                key={id}
+                onClick={() => {
+                  const element = document.getElementById(id);
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                  setMenuOpen(false);
+                }}
+                className="text-2xl text-gray-300 hover:text-white transition-colors"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {label}
+              </button>
+            ))}
+
+            <button
+              onClick={() => setMenuOpen(false)}
+              className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
+            >
+              Hire Me
+            </button>
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
       <main className="pt-16">
         {/* Intro Section */}
@@ -129,15 +163,11 @@ export const PortfolioPage = () => {
         {/* Education Section */}
         <Education />
 
-        {/* Experience Section */}
-        <Experience selectedSkills={selectedSkills} />
-
         {/* Skills Section */}
         <InteractiveSkills
           selectedSkills={selectedSkills}
           onSkillToggle={toggleSkill}
           filteredProjectCount={filteredProjectCount}
-          filteredExperienceCount={filteredExperienceCount}
         />
 
         {/* Projects Section */}
@@ -182,7 +212,6 @@ export const PortfolioPage = () => {
           {[
             { id: 'intro', label: 'Home' },
             { id: 'education', label: 'Education' },
-            { id: 'experience', label: 'Experience' },
             { id: 'skills', label: 'Skills' },
             { id: 'projects', label: 'Projects' },
             { id: 'contact', label: 'Contact' }

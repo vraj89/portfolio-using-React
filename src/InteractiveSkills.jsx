@@ -1,6 +1,6 @@
-import { useState } from "react";
 
-export const InteractiveSkills = ({ selectedSkills, onSkillToggle, filteredProjectCount, filteredExperienceCount }) => {
+
+export const InteractiveSkills = ({ selectedSkills, onSkillToggle, filteredProjectCount }) => {
   const skillCategories = [
     {
       category: "Frontend Technologies",
@@ -43,7 +43,7 @@ export const InteractiveSkills = ({ selectedSkills, onSkillToggle, filteredProje
             Technical Skills
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto mb-6">
-            Click on any skill to filter projects and experience. Explore my expertise across modern web technologies.
+            Click on any skill to filter projects. Explore my expertise across modern web technologies.
           </p>
           
           {/* Filter Info */}
@@ -52,8 +52,6 @@ export const InteractiveSkills = ({ selectedSkills, onSkillToggle, filteredProje
               <p className="text-sm text-gray-300">
                 <span className="text-blue-400 font-semibold">{selectedSkills.length} skill(s) selected</span> — 
                 <span className="ml-2">{filteredProjectCount} project(s)</span>
-                <span className="mx-2">•</span>
-                <span>{filteredExperienceCount} experience(s)</span>
               </p>
             </div>
           )}
@@ -155,7 +153,7 @@ export const InteractiveSkills = ({ selectedSkills, onSkillToggle, filteredProje
         {/* Info Box */}
         <div className="mt-12 p-6 rounded-xl border border-cyan-500/30 bg-cyan-500/5 text-gray-300 text-center">
           <p className="text-sm leading-relaxed">
-            💡 <span className="font-semibold text-cyan-400">Pro Tip:</span> Click on skills above to see how they relate to my projects and professional experience. This helps you understand my expertise in each technology!
+            💡 <span className="font-semibold text-cyan-400">Pro Tip:</span> Click on skills above to see how they relate to my projects. This helps you understand my expertise in each technology!
           </p>
         </div>
       </div>
