@@ -106,7 +106,13 @@ export const PortfolioPage = () => {
             ))}
           </div>
 
-          <button className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all">
+          <button
+            onClick={() => {
+              const element = document.getElementById('contact');
+              element?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:-translate-y-0.5"
+          >
             Hire Me
           </button>
         </div>
@@ -145,12 +151,16 @@ export const PortfolioPage = () => {
               </button>
             ))}
 
-            <button
-              onClick={() => setMenuOpen(false)}
-              className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all"
-            >
-              Hire Me
-            </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                  setMenuOpen(false);
+                }}
+                className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:-translate-y-0.5"
+              >
+                Hire Me
+              </button>
           </div>
         </div>
       )}
@@ -196,12 +206,16 @@ export const PortfolioPage = () => {
                 ))}
               </div>
             </div>
-            <button
-              onClick={() => setSelectedSkills([])}
-              className="text-xs text-gray-400 hover:text-gray-300 underline ml-2"
-            >
-              Clear all
-            </button>
+              <button
+                onClick={() => {
+                  const element = document.getElementById('contact');
+                  element?.scrollIntoView({ behavior: 'smooth' });
+                  setMenuOpen(false);
+                }}
+                className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:-translate-y-0.5"
+              >
+                Hire Me
+              </button>
           </div>
         </div>
       )}

@@ -1,6 +1,6 @@
 # Deployment Guide - Portfolio Using React
 
-Complete guide to deploy your portfolio to Vercel and configure all necessary services.
+Complete guide to deploy your portfolio to Render and configure all necessary services.
 
 ---
 
@@ -13,60 +13,59 @@ Complete guide to deploy your portfolio to Vercel and configure all necessary se
 
 ---
 
-## 🚀 Step 1: Vercel Deployment
+## 🚀 Step 1: Render Deployment
 
-### Option A: Deploy via Vercel CLI (Fastest)
+### Option A: Deploy via Render Dashboard (Recommended)
+
+1. Go to [https://render.com/dashboard](https://render.com/dashboard)
+2. Click **"New"** → **"Web Service"**
+3. Connect your GitHub repository
+4. Configure:
+   - **Name**: portfolio-using-React
+   - **Framework**: Vite
+   - **Build Command**: `npm run build`
+   - **Publish Directory**: `dist`
+5. Click **"Create Web Service"**
+
+### Option B: Deploy via Render CLI
 
 ```bash
-# Install Vercel CLI globally
-npm install -g vercel
+# Install Render CLI globally
+npm install -g render-cli
 
 # Navigate to project directory
-cd c:\Users\dell\Desktop\react\portfolio
+cd portfolio-using-React
 
-# Deploy to Vercel
-vercel --prod
+# Deploy to Render
+render deploy
 ```
 
-### Option B: Deploy via Vercel Dashboard (Recommended)
-
-1. Go to [https://vercel.com/dashboard](https://vercel.com/dashboard)
-2. Click **"New Project"**
-3. Select **"Import Git Repository"**
-4. Search for `portfolio-using-React`
-5. Click **"Import"**
-6. Vercel will auto-detect:
-   - **Framework Preset**: Vite
-   - **Build Command**: `npm run build`
-   - **Output Directory**: `dist`
-7. Click **"Deploy"** ✅
-
-Your portfolio will be available at: `https://portfolio-[random-id].vercel.app`
+Your portfolio will be available at: `https://portfolio-using-React.onrender.com`
 
 ---
 
-## 🌐 Step 2: Add Custom Domain (vrajportfolio)
+## 🌐 Step 2: Add Custom Domain
 
-### Using Vercel's Domain Registration
+### Using Render's Domain Management
 
-1. Go to your **Vercel Project Dashboard**
-2. Click **"Settings"** → **"Domains"**
-3. Click **"Add Domain"**
+1. Go to your **Render Project Dashboard**
+2. Click **"Settings"** → **"Custom Domains"**
+3. Click **"Add Custom Domain"**
 4. Enter your desired domain: `vrajportfolio.com` or `vrajportfolio.dev`
 5. Choose registration method:
-   - **Use Vercel's registrar** (Automatic DNS setup)
+   - **Use Render's registrar** (Automatic DNS setup)
    - **Use external registrar** (Manual DNS configuration)
 
 ### If Using External Registrar (GoDaddy, Namecheap, etc.)
 
-1. In Vercel Dashboard: **Settings** → **Domains**
+1. In Render Dashboard: **Settings** → **Custom Domains**
 2. Add your domain name
-3. Copy the **Vercel nameservers**
+3. Copy the **Render nameservers**
 4. In your domain registrar's control panel:
    - Navigate to DNS/Nameserver settings
-   - Replace existing nameservers with Vercel's nameservers
+   - Replace existing nameservers with Render's nameservers
 5. Wait 24-48 hours for DNS propagation
-6. Vercel will show a green checkmark when ready
+6. Render will show a green checkmark when ready
 
 ### Domain Configuration Costs
 - `.com` / `.dev` / `.app`: ~$12-15/year
@@ -93,19 +92,19 @@ Your portfolio will be available at: `https://portfolio-[random-id].vercel.app`
 4. Configure template variables:
    ```
    Subject: {{subject}}
-   
+
    Name: {{from_name}}
    Email: {{from_email}}
-   
+
    Message:
    {{message}}
    ```
 5. Set recipient email (your email)
 6. Save template
 
-### Add Environment Variables to Vercel
+### Add Environment Variables to Render
 
-1. In **Vercel Project Dashboard**
+1. In **Render Project Dashboard**
 2. Go to **Settings** → **Environment Variables**
 3. Add these three variables:
 
@@ -115,8 +114,7 @@ Your portfolio will be available at: `https://portfolio-[random-id].vercel.app`
 | `VITE_EMAILJS_TEMPLATE_ID` | `template_xxxxx` |
 | `VITE_EMAILJS_PUBLIC_KEY` | Your Public Key |
 
-4. Select environments: **Production, Preview, Development**
-5. Click **"Save"**
+4. Click **"Save"**
 
 ### Configure Local Environment Variables
 
@@ -129,15 +127,14 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key_here
 
 ---
 
-## ⚙️ Step 4: Environment Variables in Vercel
+## ⚙️ Step 4: Environment Variables in Render
 
-### From Vercel Dashboard
+### From Render Dashboard
 
 1. **Settings** → **Environment Variables**
 2. Add all three EmailJS variables (see table above)
-3. Mark for **Production** environment
-4. Click **"Save"**
-5. **Redeploy** to apply changes
+3. Click **"Save"**
+4. **Redeploy** to apply changes
 
 ### Verify Variables are Working
 
@@ -174,10 +171,9 @@ JS:    251.81 kB (gzipped: 79.03 kB)
    npm install -D sharp
    ```
 
-2. **Enable Compression** (Vercel does this automatically)
+2. **Enable Compression** (Render does this automatically)
 
 3. **Monitor Performance**:
-   - Use Vercel Analytics (Settings → Analytics)
    - Check Google PageSpeed Insights
    - Monitor Core Web Vitals
 
@@ -185,7 +181,7 @@ JS:    251.81 kB (gzipped: 79.03 kB)
 
 ## 🔄 Step 6: Continuous Deployment
 
-Vercel automatically deploys when you:
+Render automatically deploys when you:
 1. Push to main branch
 2. Create pull requests
 3. Merge pull requests
@@ -199,7 +195,7 @@ git commit & git push
      ↓
 GitHub Repository Updated
      ↓
-Vercel Auto-Detects Push
+Render Auto-Detects Push
      ↓
 Build & Deploy
      ↓
@@ -241,7 +237,7 @@ Live on vrajportfolio.com
 **Problem**: "Email service is not configured"
 
 **Solution**:
-1. Verify environment variables in Vercel dashboard
+1. Verify environment variables in Render dashboard
 2. Redeploy project
 3. Check browser console for errors
 4. Verify EmailJS credentials are correct
@@ -262,27 +258,26 @@ Live on vrajportfolio.com
 
 **Solution**:
 1. Test build locally: `npm run build`
-2. Check build logs in Vercel dashboard
+2. Check build logs in Render dashboard
 3. Fix any TypeScript or syntax errors
 4. Push fix to GitHub
-5. Vercel will auto-redeploy
+5. Render will auto-redeploy
 
 ### Performance Issues
 
 **Problem**: Site loads slowly
 
 **Solution**:
-1. Check Vercel Analytics
-2. Optimize images
-3. Enable caching headers
-4. Monitor Core Web Vitals
-5. Check for large npm dependencies
+1. Optimize images
+2. Enable caching headers
+3. Monitor Core Web Vitals
+4. Check for large npm dependencies
 
 ---
 
 ## 📚 Useful Links
 
-- [Vercel Documentation](https://vercel.com/docs)
+- [Render Documentation](https://render.com/docs)
 - [Vite Guide](https://vitejs.dev/guide/)
 - [React Best Practices](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
@@ -292,15 +287,15 @@ Live on vrajportfolio.com
 
 ## ✅ Final Checklist
 
-- [ ] Vercel account created
-- [ ] Repository linked to Vercel
+- [ ] Render account created
+- [ ] Repository linked to Render
 - [ ] Custom domain purchased (vrajportfolio)
-- [ ] Domain added to Vercel
+- [ ] Domain added to Render
 - [ ] EmailJS account created
 - [ ] EmailJS credentials added to .env.local
-- [ ] Environment variables added to Vercel
-- [ ] Site deployed to Vercel
-- [ ] Custom domain pointing to Vercel
+- [ ] Environment variables added to Render
+- [ ] Site deployed to Render
+- [ ] Custom domain pointing to Render
 - [ ] Contact form tested and working
 - [ ] Performance optimized
 - [ ] README updated on GitHub
@@ -309,4 +304,4 @@ Live on vrajportfolio.com
 
 **🎉 Your portfolio is now live! Share it with the world!**
 
-Questions? Check the troubleshooting section or contact Vercel support.
+Questions? Check the troubleshooting section or contact Render support.

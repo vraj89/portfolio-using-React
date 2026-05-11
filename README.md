@@ -15,7 +15,7 @@ A modern, responsive personal portfolio website built with **React**, **Vite**, 
 - **One-Page Navigation** - Smooth scrolling through all sections
 - **Project Showcase** - Detailed project cards with features and technologies
 - **Skills Display** - Organized skill categories with proficiency levels
-- **Education Timeline** - Academic background and certifications
+- **Education Timeline** - Academic background
 - **Performance Optimized** - Fast load times with Vite
 - **Mobile Friendly** - Responsive hamburger menu for mobile devices
 - **Loading Animation** - Professional loading screen
@@ -38,7 +38,7 @@ A modern, responsive personal portfolio website built with **React**, **Vite**, 
 - **Styling**: Tailwind CSS 4.2.2
 - **Routing**: React Router DOM 7.14.0
 - **Email Service**: EmailJS 4.3.1 (for contact form)
-- **Deployment**: Vercel
+- **Deployment**: Render
 
 ## 🚀 Getting Started
 
@@ -111,29 +111,36 @@ npm lint
 
 ## 🌐 Deployment
 
-This project is optimized for deployment on **Vercel**.
+This project is optimized for deployment on **Render**.
 
-### Quick Deploy to Vercel
+### Quick Deploy to Render
 
 1. Push your code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "New Project" and import your repository
-4. Add environment variables in Vercel dashboard:
+2. Go to [render.com](https://render.com)
+3. Click "New" → "Web Service"
+4. Connect your GitHub repository
+5. Configure:
+   - **Build Command**: `npm run build`
+   - **Publish Directory**: `dist`
+6. Add environment variables in Render dashboard:
    - `VITE_EMAILJS_PUBLIC_KEY`
    - `VITE_EMAILJS_SERVICE_ID`
    - `VITE_EMAILJS_TEMPLATE_ID`
-5. Click "Deploy"
+7. Click "Create Web Service"
 
 Your portfolio will be live! 🎉
 
-### Vercel CLI Deployment
+### Render CLI Deployment
 
 ```bash
-npm i -g vercel
-vercel
+# Install Render CLI globally
+npm install -g render-cli
+
+# Deploy to Render
+render deploy
 ```
 
-**Note**: Make sure to add environment variables in Vercel dashboard after deployment.
+**Note**: Make sure to add environment variables in Render dashboard after deployment. The process for configuring Environment Variables remains identical to the previous workflow.
 
 ## 📂 Project Structure
 
@@ -163,20 +170,7 @@ portfolio-using-React/
 ├── package.json              # Dependencies
 ├── vite.config.js            # Vite configuration
 ├── index.html                # HTML entry point
-├── eslint.config.js          # ESLint rules
 └── README.md                 # This file
-│   ├── main.jsx              # Entry point
-│   ├── index.css             # Global styles
-│   ├── projectsData.js       # Project data (imported from external file)
-│   └── context/              # React context providers
-│       └── ThemeContext.jsx
-├── .env.example              # Environment variables template
-├── .env.local                # Local environment variables (gitignored)
-├── .vercelignore             # Vercel ignore file
-├── vite.config.js            # Vite configuration
-├── package.json              # Dependencies and scripts
-├── README.md                 # This file
-└── LICENSE                   # MIT License
 ```
 
 ## 🔧 Configuration
@@ -214,7 +208,7 @@ This project is open source and available under the [MIT License](LICENSE).
 Feel free to fork, modify, and use this portfolio as a template for your own!
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
