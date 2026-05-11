@@ -178,9 +178,9 @@ npm run preview
 
 ### Deployment
 ```bash
-# Vercel (recommended)
+# Render (recommended)
 npm run build
-vercel deploy
+# Deploy from the Render dashboard
 
 # Or use any static hosting (Netlify, GitHub Pages, etc.)
 ```

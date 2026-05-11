@@ -5,21 +5,21 @@ export const Intro = () => {
   };
 
   return (
-    <section id="intro" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="intro" className="min-h-[calc(100vh-4rem)] flex items-center justify-center relative overflow-hidden scroll-mt-16 px-4 py-16 md:py-20">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-20 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: "1s" }}></div>
       </div>
 
-      <div className="text-center z-10 px-4 max-w-5xl mx-auto animate-fadeIn">
+      <div className="text-center z-10 max-w-5xl mx-auto animate-fadeIn">
         {/* Greeting */}
         <div className="mb-4 text-blue-400 font-semibold text-sm md:text-base tracking-widest uppercase animate-slideDown">
-          Welcome to my professional portfolio
+          Welcome to my portfolio
         </div>
 
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 bg-clip-text text-transparent leading-tight animate-slideDown" style={{ animationDelay: "0.2s" }}>
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 bg-clip-text text-transparent leading-tight animate-slideDown" style={{ animationDelay: "0.2s" }}>
           Hi, I'm Vraj Vaghela
         </h1>
 
@@ -42,10 +42,13 @@ export const Intro = () => {
             View My Work
           </button>
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent('hire-me-clicked'));
+              scrollToSection('contact');
+            }}
             className="border-2 border-blue-500/50 text-blue-400 py-4 px-10 rounded-lg font-semibold transition-all duration-200 hover:-translate-y-1 hover:bg-blue-500/10 hover:border-blue-500 hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] text-center text-lg"
           >
-            Get In Touch
+            Hire Me
           </button>
         </div>
 
@@ -66,7 +69,7 @@ export const Intro = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="mt-20 animate-bounce">
+        <div className="mt-12 md:mt-20 animate-bounce">
           <div className="flex flex-col items-center gap-2">
             <p className="text-sm text-gray-400">Scroll to explore</p>
             <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">

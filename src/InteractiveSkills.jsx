@@ -15,7 +15,7 @@ export const InteractiveSkills = ({ selectedSkills, onSkillToggle, filteredProje
     {
       category: "Tools & Platforms",
       icon: "🛠️",
-      skills: ["Git/GitHub", "Vite", "Vercel", "VS Code", "Webpack", "REST API"]
+      skills: ["Git/GitHub", "Vite", "Render", "VS Code", "Webpack", "REST API"]
     },
     {
       category: "Advanced Skills",

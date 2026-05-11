@@ -10,7 +10,7 @@ export const Skills = () => {
     },
     {
       category: "Tools & Platforms",
-      skills: ["Git/GitHub", "Vite", "Vercel", "VS Code", "Webpack"]
+      skills: ["Git/GitHub", "Vite", "Render", "VS Code", "Webpack"]
     },
     {
       category: "Soft Skills",

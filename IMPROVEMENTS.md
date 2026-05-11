@@ -250,7 +250,7 @@ Contact (Direct email + social links)
 1. **Add More Projects** - Update `projectsData.js` with more projects
 2. **Customize Colors** - Modify Tailwind colors to match your brand
 3. **Add Images** - Add project screenshots in `public/` folder
-4. **Deploy** - Push to Vercel and set environment variables
+4. **Deploy** - Push to Render and set environment variables
 5. **Social Links** - Update GitHub, LinkedIn, Twitter URLs
 6. **Additional Sections** - Add testimonials, blog, or resume
 

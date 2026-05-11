@@ -96,14 +96,14 @@ You should receive the email within seconds!
 
 ## 🚀 Deploy to Production
 
-### Option A: Deploy to Vercel (Recommended)
+### Option A: Deploy to Render (Recommended)
 
 ```bash
-npm i -g vercel
-vercel
+# # Deploy from the Render dashboards from the dashboard
+Render
 ```
 
-Then in Vercel Dashboard:
+Then in Render Dashboard:
 1. Go to your project settings
 2. Environment Variables
 3. Add the 3 EmailJS variables:

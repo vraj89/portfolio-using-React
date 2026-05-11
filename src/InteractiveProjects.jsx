@@ -8,8 +8,8 @@ const InteractiveProjects = ({ selectedSkills }) => {
       id: 1,
       title: "Currency Converter",
       description: "A sophisticated real-time currency conversion application that fetches live exchange rates from multiple sources. Users can select source and target currencies, enter amounts, and get instant conversions with a clean, intuitive interface.",
-      technologies: ["React", "JavaScript", "REST API", "Tailwind CSS", "Vercel"],
-      link: "https://currencyconverter-two-ashen.vercel.app/",
+      technologies: ["React", "JavaScript", "REST API", "Tailwind CSS", "Render"],
+      link: "#",
       category: "Finance",
       features: [
         "Real-time exchange rate updates",
@@ -25,8 +25,8 @@ const InteractiveProjects = ({ selectedSkills }) => {
       id: 2,
       title: "Random Password Generator",
       description: "A secure password generation tool with customizable options. Users can control password length, character types (uppercase, lowercase, numbers, symbols), and easily copy generated passwords with clipboard integration.",
-      technologies: ["React", "JavaScript", "Tailwind CSS", "Vercel"],
-      link: "https://random-password-generator-murex-eight.vercel.app/",
+      technologies: ["React", "JavaScript", "Tailwind CSS", "Render"],
+      link: "#",
       category: "Security",
       features: [
         "Customizable password length",
@@ -59,7 +59,7 @@ const InteractiveProjects = ({ selectedSkills }) => {
       id: 4,
       title: "Weather Dashboard",
       description: "A beautiful weather application that provides real-time weather information, forecasts, and location-based services using modern weather APIs.",
-      technologies: ["React", "REST API", "Tailwind CSS", "JavaScript (ES6+)", "Vercel"],
+      technologies: ["React", "REST API", "Tailwind CSS", "JavaScript (ES6+)", "Render"],
       link: "#",
       category: "Weather",
       features: [

@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { sendEmail } from './services/email';
 
 function Contact() {
@@ -12,6 +12,24 @@ function Contact() {
   });
   const [loading, setLoading] = useState(false);
   const [feedback, setFeedback] = useState(null);
+  const nameInputRef = useRef(null);
+
+  useEffect(() => {
+    const prepareHireForm = () => {
+      setFormData(prev => ({
+        ...prev,
+        subject: prev.subject || 'Hiring Opportunity for React Developer'
+      }));
+      setFeedback({
+        type: 'success',
+        message: 'Thanks for your interest. Share the role details below, or email me directly from the contact card.'
+      });
+      setTimeout(() => nameInputRef.current?.focus(), 350);
+    };
+
+    window.addEventListener('hire-me-clicked', prepareHireForm);
+    return () => window.removeEventListener('hire-me-clicked', prepareHireForm);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -78,6 +96,7 @@ function Contact() {
                   type="text"
                   id="name"
                   name="name"
+                  ref={nameInputRef}
                   value={formData.name}
                   onChange={handleChange}
                   className="w-full px-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all"
@@ -201,7 +220,7 @@ function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all group"
                 >
-                  <span className="text-lg">→</span>
+                  <span className="text-lg">-&gt;</span>
                   <div>
                     <p className="font-semibold text-white group-hover:text-blue-400 transition-colors">GitHub</p>
                     <p className="text-xs text-gray-500">View my projects</p>
@@ -214,7 +233,7 @@ function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all group"
                 >
-                  <span className="text-lg">→</span>
+                  <span className="text-lg">-&gt;</span>
                   <div>
                     <p className="font-semibold text-white group-hover:text-blue-400 transition-colors">LinkedIn</p>
                     <p className="text-xs text-gray-500">Connect professionally</p>
@@ -227,7 +246,7 @@ function Contact() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-white/10 transition-all group"
                 >
-                  <span className="text-lg">→</span>
+                  <span className="text-lg">-&gt;</span>
                   <div>
                     <p className="font-semibold text-white group-hover:text-blue-400 transition-colors">Twitter</p>
                     <p className="text-xs text-gray-500">Follow updates</p>

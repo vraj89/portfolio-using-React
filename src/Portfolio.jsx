@@ -16,10 +16,10 @@ export const PortfolioPage = () => {
     } else {
       // Count projects matching selected skills
       const projects = [
-        { technologies: ["React", "JavaScript", "REST API", "Tailwind CSS", "Vercel"] },
-        { technologies: ["React", "JavaScript", "Tailwind CSS", "Vercel"] },
+        { technologies: ["React", "JavaScript", "REST API", "Tailwind CSS", "Render"] },
+        { technologies: ["React", "JavaScript", "Tailwind CSS", "Render"] },
         { technologies: ["React", "JavaScript", "Tailwind CSS", "React Hooks"] },
-        { technologies: ["React", "REST API", "Tailwind CSS", "JavaScript (ES6+)", "Vercel"] },
+        { technologies: ["React", "REST API", "Tailwind CSS", "JavaScript (ES6+)", "Render"] },
         { technologies: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "Bootstrap", "REST API"] },
         { technologies: ["React.js", "JavaScript (ES6+)", "Tailwind CSS", "State Management", "Responsive Design"] }
       ];
@@ -38,6 +38,17 @@ export const PortfolioPage = () => {
         ? prev.filter(s => s !== skill)
         : [...prev, skill]
     );
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleHireMe = () => {
+    window.dispatchEvent(new CustomEvent('hire-me-clicked'));
+    scrollToSection('contact');
+    setMenuOpen(false);
   };
 
   // Track active section
@@ -77,7 +88,7 @@ export const PortfolioPage = () => {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-            {menuOpen ? '✕' : '☰'}
+            {menuOpen ? 'Close' : 'Menu'}
           </button>
 
           <div className="hidden md:flex items-center gap-8">
@@ -107,10 +118,7 @@ export const PortfolioPage = () => {
           </div>
 
           <button
-            onClick={() => {
-              const element = document.getElementById('contact');
-              element?.scrollIntoView({ behavior: 'smooth' });
-            }}
+            onClick={handleHireMe}
             className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:-translate-y-0.5"
           >
             Hire Me
@@ -126,7 +134,7 @@ export const PortfolioPage = () => {
             className="absolute top-6 right-6 text-white text-3xl focus:outline-none"
             aria-label="Close menu"
           >
-            ✕
+            Close
           </button>
 
           <div className="flex flex-col gap-8 text-center">
@@ -152,11 +160,7 @@ export const PortfolioPage = () => {
             ))}
 
               <button
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                  setMenuOpen(false);
-                }}
+                onClick={handleHireMe}
                 className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:-translate-y-0.5"
               >
                 Hire Me
@@ -201,21 +205,11 @@ export const PortfolioPage = () => {
                     className="bg-blue-500/20 text-blue-300 text-xs px-2.5 py-1 rounded-full hover:bg-blue-500/30 transition-all flex items-center gap-1.5"
                   >
                     {skill}
-                    <span>×</span>
+                    <span>x</span>
                   </button>
                 ))}
               </div>
             </div>
-              <button
-                onClick={() => {
-                  const element = document.getElementById('contact');
-                  element?.scrollIntoView({ behavior: 'smooth' });
-                  setMenuOpen(false);
-                }}
-                className="mt-8 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg hover:shadow-blue-500/50 transition-all hover:-translate-y-0.5"
-              >
-                Hire Me
-              </button>
           </div>
         </div>
       )}

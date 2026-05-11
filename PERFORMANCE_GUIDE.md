@@ -57,7 +57,7 @@ Vite automatically removes unused code from your bundles.
 
 ### Immediate (Easy to Implement)
 
-1. **Enable Brotli Compression** (Vercel does this by default)
+1. **Enable Brotli Compression** (Render does this by default)
    - Further reduces bundle by 5-10% compared to gzip
 
 2. **Add Resource Hints**
@@ -73,7 +73,7 @@ Vite automatically removes unused code from your bundles.
    - Convert PNG/JPG to WebP
    - Add responsive images with srcset
 
-4. **Enable HTTP/2 Push** (Vercel handles this)
+4. **Enable HTTP/2 Push** (Render handles this)
 
 ### Medium (More Involved)
 
@@ -98,7 +98,7 @@ Vite automatically removes unused code from your bundles.
 
 ### Advanced (Performance Monitoring)
 
-9. **Set Up Vercel Analytics**
+9. **Set Up Render Analytics**
    - Dashboard: Settings → Analytics
    - Monitor Core Web Vitals in real-time
 
@@ -129,15 +129,15 @@ Vite automatically removes unused code from your bundles.
 - [ ] Test on real device/network
 - [ ] Check PageSpeed Insights score
 - [ ] Run Lighthouse audit
-- [ ] Monitor Vercel Analytics
+- [ ] Monitor Render Analytics
 - [ ] Test contact form on production
 
 ---
 
 ## 📈 Monitoring Performance
 
-### Vercel Analytics Dashboard
-1. Go to Vercel Dashboard
+### Render Analytics Dashboard
+1. Go to Render Dashboard
 2. Select your project
 3. Click "Analytics"
 4. Monitor:
@@ -213,7 +213,7 @@ Analyze:
 
 ## 💾 Caching Strategy
 
-### Vercel Caching (Automatic)
+### Render Caching (Automatic)
 
 ```
 /                 → Revalidated on each request
@@ -223,7 +223,7 @@ Analyze:
 
 ### Add Custom Cache Headers
 
-In `vercel.json`:
+In `Render.json`:
 ```json
 {
   "headers": [
@@ -247,7 +247,7 @@ In `vercel.json`:
 - [Vite Performance Guide](https://vitejs.dev/guide/features.html)
 - [React Performance](https://react.dev/reference/react/Profiler)
 - [Web.dev Performance](https://web.dev/performance/)
-- [Vercel Speed Insights](https://vercel.com/analytics)
+- [Render Speed Insights](https://Render.com/analytics)
 
 ---
 

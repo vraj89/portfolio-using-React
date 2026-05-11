@@ -22,7 +22,7 @@ export const Education = () => {
             Education
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            My academic background and continuous professional development journey
+            My academic background and hands-on learning journey
           </p>
         </div>
 
@@ -56,7 +56,7 @@ export const Education = () => {
                 <ul className="space-y-3">
                   {item.highlights.map((highlight, i) => (
                     <li key={i} className="text-gray-400 text-sm flex items-start gap-3">
-                      <span className="text-blue-400 font-bold mt-1 text-lg flex-shrink-0">→</span>
+                      <span className="text-blue-400 font-bold mt-1 text-lg flex-shrink-0">-&gt;</span>
                       <span>{highlight}</span>
                     </li>
                   ))}
@@ -80,8 +80,8 @@ export const Education = () => {
             <p className="text-xs text-gray-400">Projects Done</p>
           </div>
           <div className="rounded-lg p-6 bg-white/5 border border-white/10 hover:border-blue-500/30 text-center transition-all hover:bg-white/10 animate-slideUp" style={{ transitionDelay: "300ms" }}>
-            <div className="text-3xl font-bold text-cyan-400 mb-2">4</div>
-            <p className="text-xs text-gray-400">Courses Completed</p>
+            <div className="text-3xl font-bold text-cyan-400 mb-2">3+</div>
+            <p className="text-xs text-gray-400">Core Subjects</p>
           </div>
         </div>
       </div>

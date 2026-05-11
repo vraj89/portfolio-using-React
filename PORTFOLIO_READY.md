@@ -205,8 +205,8 @@ Your portfolio is now perfect for recruiter scanning:
 5. Build: `npm run build`
 
 ### Deployment:
-1. Deploy to Vercel (recommended)
-2. Add environment variables in Vercel dashboard
+1. Deploy to Render (recommended)
+2. Add environment variables in Render dashboard
 3. Share your portfolio link!
 
 ---
@@ -219,11 +219,11 @@ Your portfolio is ready to deploy immediately:
 # Build for production
 npm run build
 
-# Deploy to Vercel (recommended)
-vercel
+# Deploy to Render (recommended)
+Render
 ```
 
-**Note**: Don't forget to add environment variables in Vercel dashboard!
+**Note**: Don't forget to add environment variables in Render dashboard!
 
 ---
 

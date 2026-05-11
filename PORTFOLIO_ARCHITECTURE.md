@@ -277,10 +277,10 @@ selectedSkills.length === 0
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Render (Recommended)
 ```bash
 npm run build
-vercel deploy
+# Deploy from the Render dashboard
 ```
 
 ### Other Platforms

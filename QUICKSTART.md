@@ -203,10 +203,10 @@ The contact form is pre-configured for EmailJS. To enable it:
 
 ## Deployment
 
-### Deploy to Vercel (Recommended)
+### Deploy to Render (Recommended)
 ```bash
 npm run build
-vercel deploy
+# Deploy from the Render dashboard
 ```
 
 ### Deploy to Netlify
@@ -300,7 +300,7 @@ Respect `prefers-reduced-motion` media query for accessibility
 - Typography: Space Grotesk font
 
 🚀 **Deployment:**
-- Vercel: https://vercel.com/
+- Render: https://Render.com/
 - Netlify: https://netlify.com/
 - GitHub Pages: https://pages.github.com/
 
@@ -310,7 +310,7 @@ Respect `prefers-reduced-motion` media query for accessibility
 2. ✅ Customize with your information (update all sections)
 3. ✅ Test filtering and navigation (scroll around and click skills)
 4. ✅ Configure contact form (EmailJS setup)
-5. ✅ Deploy to production (Vercel/Netlify)
+5. ✅ Deploy to production (Render/Netlify)
 6. ✅ Share with recruiters!
 
 ## Support
@@ -366,22 +366,22 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
    - `{{message}}`
 5. Copy: Service ID, Template ID, Public Key
 
-### Step 3: Deploy to Vercel (5 minutes)
+### Step 3: Deploy to Render (5 minutes)
 **Option A - Using Dashboard (Recommended):**
-1. Go to https://vercel.com/dashboard
+1. Go to https://dashboard.render.com/
 2. Click "New Project"
 3. Import "portfolio-using-React" repository
 4. Click "Deploy" ✅
 
 **Option B - Using CLI:**
 ```bash
-npm install -g vercel
+# # Deploy from the Render dashboards from the dashboard
 cd c:\Users\dell\Desktop\react\portfolio
-vercel --prod
+# Deploy from the Render dashboard
 ```
 
-### Step 4: Add Environment Variables to Vercel (5 minutes)
-1. In Vercel Dashboard → Settings → Environment Variables
+### Step 4: Add Environment Variables to Render (5 minutes)
+1. In Render Dashboard → Settings → Environment Variables
 2. Add three variables (from Step 2):
    - `VITE_EMAILJS_SERVICE_ID`
    - `VITE_EMAILJS_TEMPLATE_ID`
@@ -392,13 +392,13 @@ vercel --prod
 ### Step 5: Purchase & Setup Custom Domain (15-30 minutes)
 **Domain Registration:**
 - `.com` / `.dev` / `.app` = $12-15/year
-- Recommended registrars: Vercel, GoDaddy, Namecheap, Google Domains
+- Recommended registrars: Render, GoDaddy, Namecheap, Google Domains
 
-**Add to Vercel:**
-1. Vercel Dashboard → Settings → Domains
+**Add to Render:**
+1. Render Dashboard → Settings → Domains
 2. Add domain "vrajportfolio.com" or "vrajportfolio.dev"
 3. Either:
-   - Use Vercel's registrar (automatic DNS)
+   - Use Render's registrar (automatic DNS)
    - Update nameservers in your registrar (manual, takes 24-48 hours)
 
 ### Step 6: Test Your Deployment (10 minutes)
@@ -419,8 +419,8 @@ portfolio/
 ├── README.md                    ← Professional documentation
 ├── DEPLOYMENT_GUIDE.md          ← Step-by-step deployment
 ├── PERFORMANCE_GUIDE.md         ← Performance optimization tips
-├── vercel.json                  ← Vercel config
-├── .vercelignore               ← Exclude files from Vercel
+├── Render.json                  ← Render config
+├── .Renderignore               ← Exclude files from Render
 ├── .env.example                ← Environment variables template
 ├── .env.local                  ← Local credentials (add your own)
 ├── vite.config.js              ← Optimized build config
@@ -442,7 +442,7 @@ portfolio/
 - ✅ `.env.local` is in `.gitignore` (not pushed to GitHub)
 - ✅ Public credentials never hardcoded
 - ✅ Environment variables used instead
-- ✅ Vercel environment variables are encrypted
+- ✅ Render environment variables are encrypted
 
 ---
 
@@ -480,7 +480,7 @@ git push origin main
     ↓
 GitHub Repository Updated
     ↓
-Vercel Auto-Detects
+Render Auto-Detects
     ↓
 Build & Deploy
     ↓
@@ -503,7 +503,7 @@ Live at vrajportfolio.com ✅
 ## 🐛 Troubleshooting Quick Links
 
 ### Contact Form Not Working?
-- Check Vercel Environment Variables set correctly
+- Check Render Environment Variables set correctly
 - Verify EmailJS credentials
 - Check browser console for errors
 
@@ -513,7 +513,7 @@ Live at vrajportfolio.com ✅
 - Verify nameservers in registrar
 
 ### Site Loading Slow?
-- Check Vercel Analytics
+- Check Render Analytics
 - Run PageSpeed Insights test
 - Check Network tab in DevTools
 
@@ -521,11 +521,11 @@ Live at vrajportfolio.com ✅
 
 ## 📚 Useful Links
 
-- **Vercel Dashboard**: https://vercel.com/dashboard
+- **Render Dashboard**: https://dashboard.render.com/
 - **EmailJS Dashboard**: https://dashboard.emailjs.com/
 - **GitHub Repository**: https://github.com/vraj89/portfolio-using-React
 - **PageSpeed Insights**: https://pagespeed.web.dev/
-- **Vercel Docs**: https://vercel.com/docs
+- **Render Docs**: https://render.com/docs
 
 ---
 
@@ -534,7 +534,7 @@ Live at vrajportfolio.com ✅
 ✅ Professional README with comprehensive documentation
 ✅ Secure environment variable management
 ✅ Optimized production build configuration
-✅ Vercel deployment ready (one click!)
+✅ # Deploy from the Render dashboardment ready (one click!)
 ✅ EmailJS integration with environment variables
 ✅ Performance optimization guide
 ✅ Complete deployment documentation
@@ -547,7 +547,7 @@ Live at vrajportfolio.com ✅
 **Estimated time to go live: 30-45 minutes**
 
 1. **Get EmailJS credentials** (10 min)
-2. **Deploy to Vercel** (5 min)
+2. **Deploy to Render** (5 min)
 3. **Configure environment variables** (5 min)
 4. **Purchase custom domain** (10-15 min)
 5. **Test everything** (10 min)
